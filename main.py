@@ -9,11 +9,11 @@ from PIL import Image
 
 PAGES = 604
 PAGES = PAGES + 1
-CONSUMER_KEY =""
-CONSUMER_SECRET =""
+CONSUMER_KEY ="2w0735dDwttgnqOoNlKIyk0ps"
+CONSUMER_SECRET ="90jGteGMQWJAMvegDnBNT2sDwZfhW5KRQRA58sTMMe35yikbTt"
 
-ACCESS_TOKEN = ""
-ACCESS_TOKEN_SECRET = ""
+ACCESS_TOKEN = "3247968953-HMs6GCFbMjOl71FNKwliFfKUWBtZZieuwoBndiw"
+ACCESS_TOKEN_SECRET = "ceL5gZkhc9XIKlchJFY5c9fE1uYM0aFQyQQykd4ptJbVm"
 
 def get_day():
     with open("data.json", "r") as jsonFile:
