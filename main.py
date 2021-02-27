@@ -1,10 +1,17 @@
 import tweepy
 import requests
 import os
-from time import sleep
-import json
-from PIL import Image
 from os import environ
+
+import time
+from time import sleep
+
+import json
+
+from PIL import Image
+import schedule
+
+from datetime import datetime
 
 PAGES = 604
 PAGES = PAGES + 1
@@ -67,10 +74,15 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Create API object
 api = tweepy.API(auth)
 
-while(1):
+def tweet_today_page():
     day = get_day()
     process_image(day)
     tweet(day)
     increment_day()
     delete_downloaded_image(str(day)+".jpg")
-    sleep(24*60*60)
+
+schedule.every().day.at("23:40").do(do_thing)
+
+while(1):
+    schedule.run_pending()
+    time.sleep(1)

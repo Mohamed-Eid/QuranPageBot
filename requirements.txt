@@ -1,2 +1,4 @@
 Pillow==6.2.0
 tweepy==3.10.0
+python-crontab==2.5.1
+schedule==1.0.0
