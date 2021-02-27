@@ -4,6 +4,7 @@ import os
 from time import sleep
 import json
 from PIL import Image
+from os import environ
 
 PAGES = 604
 PAGES = PAGES + 1
