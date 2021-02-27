@@ -5,8 +5,6 @@ from time import sleep
 import json
 from PIL import Image
 
-
-
 PAGES = 604
 PAGES = PAGES + 1
 
@@ -52,7 +50,6 @@ def convert_to_jpg(page):
     im1.save(str(page)+'.jpg')
 
 
-
 def tweet(day):
     message = "#QuranPageEveryDay  #Page"+str(day)
     api.update_with_media(str(day)+".jpg", status=message) 
@@ -62,15 +59,12 @@ def process_image(day):
     convert_to_jpg(day)
     delete_downloaded_image(str(day)+".png")
 
-
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 # Create API object
 api = tweepy.API(auth)
-
-
 
 while(1):
     day = get_day()
