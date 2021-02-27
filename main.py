@@ -16,11 +16,11 @@ from datetime import datetime
 PAGES = 604
 PAGES = PAGES + 1
 
-CONSUMER_KEY = environ['YOUR_CONSUMER_KEY']
-CONSUMER_SECRET = environ['YOUR_CONSUMER_SECRET']
+CONSUMER_KEY ="2w0735dDwttgnqOoNlKIyk0ps"
+CONSUMER_SECRET ="90jGteGMQWJAMvegDnBNT2sDwZfhW5KRQRA58sTMMe35yikbTt"
 
-ACCESS_TOKEN = environ['YOUR_ACCESS_KEY']
-ACCESS_TOKEN_SECRET = environ['YOUR_ACCESS_SECRET']
+ACCESS_TOKEN = "3247968953-HMs6GCFbMjOl71FNKwliFfKUWBtZZieuwoBndiw"
+ACCESS_TOKEN_SECRET = "ceL5gZkhc9XIKlchJFY5c9fE1uYM0aFQyQQykd4ptJbVm"
 
 def get_day():
     with open("data.json", "r") as jsonFile:
@@ -83,10 +83,10 @@ def tweet_today_page():
     print(str(datetime.now()))
 
 def ttttt():
-    print(str(datetime.now()))
+    api.update_status("test from heroku at : "+str(datetime.now())) 
 
 # schedule.every().day.at("23:52").do(tweet_today_page)
-schedule.every(5).seconds.do(ttttt)
+schedule.every(20).seconds.do(ttttt)
 
 
 while(1):
