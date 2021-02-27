@@ -82,11 +82,11 @@ def tweet_today_page():
     delete_downloaded_image(str(day)+".jpg")
     print(str(datetime.now()))
 
-def ttttt():
-    api.update_status("test from heroku at : "+str(datetime.now())) 
+# def ttttt():
+#     api.update_status("test from heroku at : "+str(datetime.now())) 
 
-# schedule.every().day.at("23:52").do(tweet_today_page)
-schedule.every(20).seconds.do(ttttt)
+schedule.every().day.at("08:00").do(tweet_today_page)
+# schedule.every(20).seconds.do(ttttt)
 
 
 while(1):
