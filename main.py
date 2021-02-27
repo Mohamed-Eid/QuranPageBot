@@ -80,10 +80,10 @@ def tweet_today_page():
     tweet(day)
     increment_day()
     delete_downloaded_image(str(day)+".jpg")
+    print(str(datetime.now()))
 
-schedule.every().day.at("23:40").do(tweet_today_page)
+schedule.every().day.at("23:50").do(tweet_today_page)
 
-print(str(datetime.now()))
 
 while(1):
     schedule.run_pending()
