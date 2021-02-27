@@ -82,7 +82,11 @@ def tweet_today_page():
     delete_downloaded_image(str(day)+".jpg")
     print(str(datetime.now()))
 
-schedule.every().day.at("23:50").do(tweet_today_page)
+def ttttt():
+    print(str(datetime.now()))
+
+# schedule.every().day.at("23:52").do(tweet_today_page)
+schedule.every(5).seconds.do(ttttt)
 
 
 while(1):
