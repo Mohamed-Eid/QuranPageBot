@@ -85,7 +85,7 @@ def tweet_today_page():
 # def ttttt():
 #     api.update_status("test from heroku at : "+str(datetime.now())) 
 
-schedule.every().day.at("08:00").do(tweet_today_page)
+schedule.every().day.at("09:40").do(tweet_today_page)
 # schedule.every(20).seconds.do(ttttt)
 
 
