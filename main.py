@@ -12,6 +12,7 @@ from PIL import Image
 import schedule
 
 from datetime import datetime
+from datetime import date
 
 PAGES = 604
 PAGES = PAGES + 1
@@ -26,6 +27,11 @@ def get_day():
     with open("data.json", "r") as jsonFile:
         data = json.load(jsonFile)
         return data["day"]
+
+def days_between():
+    first = datetime.strptime("2021-2-26", "%Y-%m-%d")
+    today = datetime.strptime(str(date.today()), "%Y-%m-%d")
+    return abs((first - today).days)
 
 def increment_day():
     with open("data.json", "r") as jsonFile:
@@ -75,7 +81,8 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 def tweet_today_page():
-    day = get_day()
+    #day = get_day()
+    day = days_between()
     process_image(day)
     tweet(day)
     increment_day()
@@ -85,7 +92,7 @@ def tweet_today_page():
 # def ttttt():
 #     api.update_status("test from heroku at : "+str(datetime.now())) 
 
-schedule.every().day.at("09:40").do(tweet_today_page)
+schedule.every().day.at("11:30").do(tweet_today_page)
 # schedule.every(20).seconds.do(ttttt)
 
 
