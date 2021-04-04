@@ -29,7 +29,7 @@ def get_day():
         return data["day"]
 
 def days_between():
-    first = datetime.strptime("2021-2-26", "%Y-%m-%d")
+    first = datetime.strptime("2021-3-1", "%Y-%m-%d")
     today = datetime.strptime(str(date.today()), "%Y-%m-%d")
     return abs((first - today).days)
 
